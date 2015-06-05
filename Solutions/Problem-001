@@ -1,0 +1,37 @@
+=begin
+Problem:
+Get the Sum of all the multiples of 3 and 5 below n
+Approach:
+Rather than brute-forcing all the multiples of 3 and 5
+and getting their sum, I'll use the series summation to 
+get the sum of the multiples immediately. This has a flaw
+though, since there will be duplicates added to the sum
+due to 3 and 5 having similar multiples. This, however 
+can be corrected by subtracting the summation of the
+multiples of 15
+
+Summation Algorithm:
+for getting the sum of 1..n
+(1 + n) * n / 2 or (n * n + n) / 2  => To ensure the sum stays as an integer
+i.e.
+Getting the sum of 1..9
+(1+9)*9/2
+10*4.5
+=>45
+Getting the sum of 1..100
+(1+100)*100/2
+101*50
+=>5050
+=end
+
+def multiples(n)
+  n -= 1
+	max3, max5, max15 = n/3, n/5, n/15	#Getting the highest nth multiples 
+	3 * (max3 * max3 + max3)/2 + 				#summation of all multiples of 3
+	5 * (max5 * max5 + max5)/2 - 				#summation of all multiples of 5
+	15 * (max15 * max15 + max15)/2 			#summation of all multiples of 15
+end
+
+#Checking
+puts multiples(1000)
+#=>233168
