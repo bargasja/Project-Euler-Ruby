@@ -1,0 +1,30 @@
+=begin
+Problem:
+Get the Sum of all even fibonacci numbers less than n
+
+Approach:
+A fibonacci sequence is made by adding the last two
+numbers to get the next number. The problem states that
+we get only the sum of even fibonacci numbers. Rather
+than using brute-force, we can use a pattern that can be
+observed when making a fibonacci series.
+
+using the example:
+1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+
+We can observe that:
+1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+^o,^e,^o,^o,^e,^o, ^o, ^e, ^o, ^o, ... o - odd, e - even
+
+We can expect this pattern to repeat since:
+even + even = even
+even + odd = odd  
+odd + odd = even 
+
+=end
+
+#calculates the next even number
+def fibEven()
+	
+
+end
